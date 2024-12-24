@@ -89,40 +89,39 @@ export default function Home() {
                 </button>
             </div>
 
-            <div
-                className={`${styles['team-area']} ${styles.left}`}
-                onClick={(e) => {
-                    const {clientX, target} = e;
-                    // Явно указываем, что target — это HTMLElement
-                    const middleX = (target as HTMLElement).offsetLeft + (target as HTMLElement).offsetWidth / 2;
-                    if (clientX < middleX) {
-                        handleScoreChange('left', 'subtract');
-                    } else {
-                        handleScoreChange('left', 'add');
-                    }
-                }}
-            >
-                <span className={styles.score}>{leftScore}</span>
+            <div className={styles['teams-container']}>
+                <div
+                    className={`${styles['team-area']} ${styles.left}`}
+                    onClick={(e) => {
+                        const {clientX, target} = e;
+                        const middleX = (target as HTMLElement).offsetLeft + (target as HTMLElement).offsetWidth / 2;
+                        if (clientX < middleX) {
+                            handleScoreChange('left', 'subtract');
+                        } else {
+                            handleScoreChange('left', 'add');
+                        }
+                    }}
+                >
+                    <span className={styles.score}>{leftScore}</span>
+                </div>
+
+                <div
+                    className={`${styles['team-area']} ${styles.right}`}
+                    onClick={(e) => {
+                        const {clientX, target} = e;
+                        const middleX = (target as HTMLElement).offsetLeft + (target as HTMLElement).offsetWidth / 2;
+                        if (clientX < middleX) {
+                            handleScoreChange('right', 'subtract');
+                        } else {
+                            handleScoreChange('right', 'add');
+                        }
+                    }}
+                >
+                    <span className={styles.score}>{rightScore}</span>
+
+                </div>
             </div>
 
-            <div
-                className={`${styles['team-area']} ${styles.right}`}
-                onClick={(e) => {
-                    const {clientX, target} = e;
-                    // Явно указываем, что target — это HTMLElement
-                    const middleX = (target as HTMLElement).offsetLeft + (target as HTMLElement).offsetWidth / 2;
-                    if (clientX < middleX) {
-                        handleScoreChange('right', 'subtract');
-                    } else {
-                        handleScoreChange('right', 'add');
-                    }
-                }}
-            >
-                <span className={styles.score}>{rightScore}</span>
-            </div>
-
-
-            {/* Отображение победителя */}
             {winner && (
                 <div className={styles['winner-banner']}>
                     <h2>{winner} выиграла!</h2>
