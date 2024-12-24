@@ -1,8 +1,14 @@
-// ResultMenu.jsx
+// ResultMenu.tsx
 import React from 'react';
 import styles from '../styles/ResultMenu.module.css';
 
-export default function ResultMenu({ handleReset, winner }) {
+// Define the prop types
+interface ResultMenuProps {
+    handleReset: () => void;  // Type for the reset function
+    winner: string;            // Type for the winner (string)
+}
+
+const ResultMenu: React.FC<ResultMenuProps> = ({ handleReset, winner }) => {
     return (
         <div>
             <div className={styles['modal-container']}>
@@ -14,3 +20,5 @@ export default function ResultMenu({ handleReset, winner }) {
         </div>
     );
 }
+
+export default ResultMenu;

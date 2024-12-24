@@ -62,6 +62,7 @@ export default function Home() {
                     className={`${styles['team-area']} ${styles.left}`}
                     onClick={(e) => {
                         const { clientX, target } = e;
+                        // @ts-ignore
                         const middleX = target.offsetLeft + target.offsetWidth / 2;
                         if (clientX < middleX) {
                             handleScoreChange('left', 'subtract');
@@ -77,6 +78,7 @@ export default function Home() {
                     className={`${styles['team-area']} ${styles.right}`}
                     onClick={(e) => {
                         const { clientX, target } = e;
+                        // @ts-ignore
                         const middleX = target.offsetLeft + target.offsetWidth / 2;
                         if (clientX < middleX) {
                             handleScoreChange('right', 'subtract');
