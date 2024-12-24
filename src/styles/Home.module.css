@@ -1,0 +1,97 @@
+/* styles/home.module.css */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 2px solid #fff;
+  padding: 10px;
+  background-color: #111;
+  width: 100%;
+}
+
+.total-score {
+  font-size: 3rem;
+  margin-bottom: 5px;
+  user-select: none;
+}
+
+.reset-btn {
+  padding: 5px 10px;
+  font-size: 1rem;
+  background-color: #fff;
+  color: #000;
+  border: none;
+  user-select: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.reset-btn:hover {
+  background-color: #ddd;
+}
+
+.court {
+  display: flex;
+  flex: 1;
+  width: 100%;
+}
+
+.team-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #fff;
+  cursor: pointer;
+  position: relative;
+  height: 100%;
+}
+
+.team-area.left {
+  border-right: 2px solid #fff;
+}
+
+.score {
+  font-size: 5rem;
+  user-select: none;
+}
+
+.winner-banner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  border: 2px solid #fff;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.winner-banner h2 {
+  color: #fff;
+  margin: 0;
+}
